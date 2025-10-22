@@ -48,6 +48,12 @@ public class principal {
                             }
                         }
                     }
+                    else{
+                        saldo=saldo-retirar;
+                        System.out.println("retias "+retirar);
+                        System.out.println("te queda "+saldo);
+
+                    }
                     break;
 
                 case 4:
