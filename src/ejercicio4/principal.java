@@ -4,15 +4,28 @@ import java.util.Scanner;
 
 public class principal {
     static void main() {
+        int [] numeros_usados = new int [100];
         Scanner sc = new Scanner(System.in);
         int numero = (int) (Math.random() * 100)+1;
-        boolean acertar = false;
         int intento=1;
         System.out.println(numero);
-        System.out.println("bienvenido, intente adivinar el numero");
+        System.out.println("bxienvenido, intente adivinar el numero");
         System.out.println("ingrese un numero");
+        int num;
+        int iteradora=0;
         do {
-            int num = sc.nextInt();
+            num = sc.nextInt();
+
+            numeros_usados[iteradora] = num;
+            iteradora++;
+            for (int i=0; i<numeros_usados.length; i++) {
+                if (num==numeros_usados[i]) {
+                    System.out.println("el numero es repetido");
+                }else{
+                    numeros_usados[i]=num;
+                }
+
+            }
             if(numero!=num){
                 System.out.println("numero incorrecto, introduzca otro");
                 intento=intento+1;
@@ -24,7 +37,6 @@ public class principal {
             }
             if (num == numero) {
 
-                acertar = true;
                 for (int i=1;i<=3;i++){
                     System.out.println("felicidades, acertaste el numero");
                 }
@@ -32,6 +44,6 @@ public class principal {
             }
 
 
-        }while (!acertar);
+        }while (num!=numero);
     }
 }
